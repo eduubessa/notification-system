@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Helpers\Constants;
+
+interface NotificationInterface
+{
+    public const NOTIFICATION_TYPE_SMS = 'NOTIFICATION::SMS';
+    public const NOTIFICATION_TYPE_EMAIL = 'NOTIFICATION::EMAIL';
+    public const NOTIFICATION_TYPE_PUSH = 'NOTIFICATION::PUSH';
+
+    public const NOTIFICATION_STATUS_SENT = 'NOTIFICATION::STATUS::SENT';
+    public const NOTIFICATION_STATUS_FAILED = 'NOTIFICATION::STATUS::FAILED';
+    public const NOTIFICATION_STATUS_PENDING = 'NOTIFICATION::STATUS::PENDING';
+}

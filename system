@@ -1,0 +1,41 @@
+<?php
+
+if(file_exists(__dir__ . '/vendor/autoload.php')) {
+    require_once __dir__ . '/vendor/autoload.php';
+}
+
+if(file_exists(__dir__ . '/Bootstrap/app.php')) {
+    require_once __dir__ . '/Bootstrap/app.php';
+}
+
+if(count($argv) > 1) {
+
+    switch ($argv[1]) {
+
+        case 'make:model':
+        case 'make:system':
+            $make = new \App\Commands\MakeCommand($argv);
+            break;
+
+        case 'notification':
+        case 'notification:send':
+        case 'notification:clear':
+        case 'notification:fresh':
+        case 'notification:refresh':
+            $notification = new \App\Commands\NotificationCommand($argv[1]);
+            break;
+
+        case 'birthday':
+        case 'birthday:today':
+        case 'birthday:tomorrow':
+        case 'birthday:system':
+            echo "Birthday Command";
+            break;
+
+        default:
+            echo "Invalid Command";
+            break;
+    }
+}
+
+
